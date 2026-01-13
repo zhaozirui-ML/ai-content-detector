@@ -1,7 +1,6 @@
-/* Tailwind CSS 指令 - PostCSS 会自动处理这些指令，编辑器警告可以忽略 */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 body {
   margin: 0;
