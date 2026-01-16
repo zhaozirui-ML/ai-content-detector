@@ -521,7 +521,7 @@ function App() {
                       {result.ai_signals.slice(0, 3).map((signal, idx) => (
                         <li key={idx} className="text-slate-400 text-xs flex items-start">
                           <span className="text-red-400 mr-1.5">•</span>
-                          <span className="line-clamp-1">{signal}</span>
+                          <span>{signal}</span>
                         </li>
                       ))}
                     </ul>
