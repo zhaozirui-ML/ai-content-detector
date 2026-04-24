@@ -2,6 +2,7 @@
   "name": "ai-content-detector",
   "private": true,
   "version": "0.0.0",
+  "description": "检测文章中 AI 含量的小工具",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,7 +11,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "axios": "^1.13.2",
+    "html2canvas": "^1.4.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

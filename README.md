@@ -1,16 +1,52 @@
-# React + Vite
+# AI Content Detector
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+AI Content Detector is a small web tool for estimating how much AI-generated content may exist in an article. It supports URL extraction and direct text input, then analyzes writing patterns, structure, repeated phrases, emotional depth, and sentence-level signals.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Analyze article content from a URL
+- Analyze pasted text directly
+- Show an AI-content score and writing-pattern signals
+- Highlight sentences with suspicious AI-generated traits
+- Export a visual analysis report
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Tailwind CSS
+- Zhipu GLM API
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Create a local `.env` file based on `.env.example`:
+
+```bash
+ZHIPU_API_KEY=your_api_key_here
+```
+
+The key is read by the backend proxy API, not by the browser bundle.
+
+Then install dependencies and start the dev server:
+
+```bash
+npm install
+npm run dev
+```
+
+## Scripts
+
+```bash
+npm run dev
+npm run build
+npm run lint
+npm run preview
+```
+
+## API Proxy
+
+The frontend sends article content to `/api/analyze`. The API route calls the Zhipu GLM API on the server side, so the browser never receives `ZHIPU_API_KEY`. Deploy this project on a platform that supports serverless API routes, such as Vercel.
+
+## Note
+
+This project is a personal experimental tool. The analysis result should be treated as a reference signal, not a definitive judgment of authorship.

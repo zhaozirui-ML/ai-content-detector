@@ -25,3 +25,10 @@ dist-ssr
 
 # Environment variables
 .env
+.env.local
+
+# Local AI assistant and refactoring notes
+.claude/
+Claude.md
+WARP.md
+REFACTORING_REPORT.md
